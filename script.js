@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to add a task
     function addTask(taskText, save = true) {
-        // Retrieve the task text from the input field and trim any extra spaces
-        const trimmedTaskText = taskText.trim();
+        // Retrieve the task text from the input field, trim any extra spaces
+        const trimmedTaskText = taskInput.value.trim();
 
         // If taskText is empty, alert the user
         if (trimmedTaskText === '') {
@@ -73,13 +73,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for the "Add Task" button
     addButton.addEventListener('click', function() {
-        addTask(taskInput.value);
+        addTask(taskInput.value); // Use trimmed value to add task
     });
 
     // Event listener for pressing the "Enter" key to add a task
     taskInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            addTask(taskInput.value);
+            addTask(taskInput.value); // Use trimmed value to add task
         }
     });
 
